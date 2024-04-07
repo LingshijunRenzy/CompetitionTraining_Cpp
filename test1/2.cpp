@@ -5,7 +5,7 @@ int main()
 {
     int l = 0, r = 0, sum = 0;
     scanf("%d %d", &l, &r);
-    for (int i = l; i <= r; i++)
+    for (int i = l; i < r; i++)
     {
         std::string str = std::to_string(i);
         int len = str.length();
@@ -15,9 +15,7 @@ int main()
             str.pop_back();
             str = lastchar + str;
             int num = std::stoi(str);
-            if (num <= i)
-                continue;
-            if (num >= l && num <= r)
+            if(num > i && num <= r)
                 sum++;
         }
     }
